@@ -1,0 +1,51 @@
+{
+   "content_scripts": [ {
+      "exclude_globs": [  ],
+      "include_globs":  [
+          "http://activeden.net/user/*/portfolio",
+          "http://activeden.net/item/*",
+          "http://audiojungle.net/user/*/portfolio",
+          "http://audiojungle.net/item/*",
+          "http://themeforest.net/user/*/portfolio",
+          "http://themeforest.net/item/*",
+          "http://videohive.net/user/*/portfolio",
+          "http://videohive.net/item/*",
+          "http://graphicriver.net/user/*/portfolio",
+          "http://graphicriver.net/item/*",
+          "http://3docean.net/user/user/*/portfolio",
+          "http://3docean.net/item/*",
+          "http://codecanyon.net/user/*/portfolio",
+          "http://codecanyon.net/item/*",
+          "http://marketplace.tutsplus.com/user/*/portfolio",
+          "http://marketplace.tutsplus.com/item/*",
+          "http://photodune.net/user/*/portfolio",
+          "http://photodune.net/item/*"
+      ],
+      "js": [ "script.js" ],
+      "matches": [
+          "http://activeden.net/user/*/portfolio",
+          "http://activeden.net/item/*",
+          "http://audiojungle.net/user/*/portfolio",
+          "http://audiojungle.net/item/*",
+          "http://themeforest.net/user/*/portfolio",
+          "http://themeforest.net/item/*",
+          "http://videohive.net/user/*/portfolio",
+          "http://videohive.net/item/*",
+          "http://graphicriver.net/user/*/portfolio",
+          "http://graphicriver.net/item/*",
+          "http://3docean.net/user/user/*/portfolio",
+          "http://3docean.net/item/*",
+          "http://codecanyon.net/user/*/portfolio",
+          "http://codecanyon.net/item/*",
+          "http://marketplace.tutsplus.com/user/*/portfolio",
+          "http://marketplace.tutsplus.com/item/*",
+          "http://photodune.net/user/*/portfolio",
+          "http://photodune.net/item/*"
+      ],
+      "run_at": "document_idle"
+   } ],
+   "converted_from_user_script": true,
+   "description": "Allows easy header/footer additions to all users items",
+   "name": "Item Header/Footer for Envato marketplaces",
+   "version": "1.0"
+}
