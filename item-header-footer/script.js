@@ -57,7 +57,12 @@
                         break;
                     case 'item_view':
                         if(this.mode() == 'editing'){
-                            this.edit_next();
+                            // look for the message box taht says "edit success"
+                            $('.notice.flash p').append(' <br/><br/><a href="#" id="mass_next_after" style="font-weight: bold;">CLICK HERE TO EDIT YOUR NEXT ITEM</a>');
+                            $('#mass_next_after').bind('click', function () {
+                                this.edit_next();
+                            });
+                            //this.edit_next();
                         }
                         break;
 
@@ -122,19 +127,32 @@
                 });
                 //console.debug(t.my_items);
             },
+            do_replace: function(h){
+
+                var preview_url = window.location.href.replace(/\/edit\//g,'/full_screen_preview/');
+                h = h.replace(/"full_screen_preview"/g,'"'+preview_url+'"');
+
+                return h;
+            },
             load_edit_ui: function(){
                 var t=this;
 
                 var d = $('#description').val();
                 if(t.default_header){
                     // search for existing header div.
-                    d = d.replace(/<div id="header">.*<\/div>\n/g,'');
-                    d = '<div id="header">'+t.default_header+'</div>'+"\n" + d;
+                    // replace content.
+                    var html = t.do_replace(t.default_header);
+
+                    d = d.replace(/<div id="header">(.|\r|\n)*?<\/div>\n/g,'');
+                    d = '<div id="header">'+html+'</div>'+"\n" + d;
                 }
                 if(t.default_footer){
                     // search for existing header div.
-                    d = d.replace(/<div id="footer">.*<\/div>/g,'');
-                    d = d + "\n"+'<div id="footer">'+t.default_footer+'</div>';
+                    // replace content.
+                    var html = t.do_replace(t.default_footer);
+                    //d = d.replace(/<div id="footer">.*<\/div>/g,'');
+                    d = d.replace(/<div id="footer">(.|\r|\n)*?<\/div>/g,'');
+                    d = d + "\n"+'<div id="footer">'+html+'</div>';
                 }
                 $('#description').val(d);
 
