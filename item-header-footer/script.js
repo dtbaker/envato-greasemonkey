@@ -40,6 +40,7 @@
             default_footer: null,
 
             init: function(){
+                var t=this;
 
                 this.load_defaults();
 
@@ -60,7 +61,7 @@
                             // look for the message box taht says "edit success"
                             $('.notice.flash p').append(' <br/><br/><a href="#" id="mass_next_after" style="font-weight: bold;">CLICK HERE TO EDIT YOUR NEXT ITEM</a>');
                             $('#mass_next_after').bind('click', function () {
-                                this.edit_next();
+                                t.edit_next();
                             });
                             //this.edit_next();
                         }
