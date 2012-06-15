@@ -6,8 +6,8 @@
 
 
 // configuration:
-const char envato_username[] = "dtbaker";
-const char envato_api_key[] = "qf8obgj8ovloic1zbvqsn6nwsvkj5qhv"; //cx090gfw105p6lpbh57q27nwamhoblir
+const char envato_username[] = "YOURUSERNAME";
+const char envato_api_key[] = "YOUR_API_KEY";
 #define BUZZPIN 2
 #define CHECK_EVERY 60 // seconds
 #define enableSerial false
